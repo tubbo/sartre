@@ -19,9 +19,12 @@ Or install it yourself as:
 
 ## Usage
 
-Given the following class:
+Sartre will allow you to test the "existence" of any method on any
+object in Ruby...
 
 ```ruby
+require 'sartre'
+
 class TestClass
   attr_accessor :name
 
@@ -29,19 +32,12 @@ class TestClass
     @name = "my name"
   end
 end
-```
 
-Sartre will allow you to test the existence of the `name` method, and if
-it has been set or not. Since we already have it set, `test.name?`
-should be equal to true. But the following code...
-
-```ruby
 test = TestClass.new
+test.name? # => true
 test.name = nil
-test.name?
+test.name? # => false
 ```
-
-...will return `false`, because name has been re-set to nil.
 
 ## Contributing
 
