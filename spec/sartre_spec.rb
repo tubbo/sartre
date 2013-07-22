@@ -15,6 +15,7 @@ describe Sartre do
         'an object'
       end
     end
+
     MyObject.new
   end
 
